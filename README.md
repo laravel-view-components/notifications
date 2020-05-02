@@ -3,12 +3,12 @@
 A Laravel View Components package built on the [Tabler UI Kit](https://tabler.io) - a free and open-source HTML Dashboard UI Kit built on Bootstrap.
 
 ## Goal
-The goal of this package is to provide a list of easy to use View Components in Blade to mimic the HTML package from LaravelCollective using the Tabler UI Kit. All the form elements listed on the [Tabler Preview](https://preview-dev.tabler.io/form-elements.html) should eventually be available here.
+The goal of this package is to provide a list of easy to use View Components in Blade to mimic the HTML package from LaravelCollective using the Tabler UI Kit. All the form elements listed on the [Tabler Preview](https://preview-dev.tabler.io/docs/toasts.html) should eventually be available here.
 
 ## Install
 
 1. Install a fresh copy of [Laravel](https://laravel.com/docs/7.x/installation) 7.x or above.
-2. Install this package via `composer require laravel-view-components/select`. Laravel 7.x will automatically discover this package. No need to register the service provider.
+2. Install this package via `composer require laravel-view-components/notifications`. Laravel 7.x will automatically discover this package. No need to register the service provider.
 3. Install the Tabler UI Preset according to it's instructions.
 4. Run `npm install && npm run dev` to build the frontend
 
@@ -22,14 +22,11 @@ There are some common component attributes notated below. Specific components ma
 
 The following Tabler UI components are available in this package.
 
-### Select images component
-`<x-select-images />`
+### Alert notification component
+`<x-notification-alert />`
 
-### Select one component
-`<x-select-one />`
+### Modal notification component
+`<x-notification-modal />`
 
-### Select tags component
-`<x-select-tags />`
-
-### Select users component
-`<x-select-users />`
+### Toast notification component
+`<x-notification-toast />`
