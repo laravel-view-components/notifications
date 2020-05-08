@@ -8,37 +8,44 @@ use Illuminate\View\Component;
 class Alert extends Component
 {
     /**
-     * The alert id attribute.
-     *
-     * @var string
-     */
-    public $id;
-    /**
-     * The alert name.
-     *
-     * @var string
-     */
-    public $name;
-    /**
      * The alert type.
      *
      * @var string
      */
     public $type;
+    /**
+     * Whether or not the alert is dismissible.
+     *
+     * @var bool
+     */
+    public $dismissible;
 
     /**
      * Create a new component instance.
+     *  Details here: https://preview-dev.tabler.io/docs/alerts.html
      *
-     * @param  string   $name
      * @param  string   $type
+     * @param  bool     $dismissible
      *
      * @return void
      */
-    public function __construct($name = "toast", $type = "success")
+    public function __construct($type = "success", $dismissible = false)
     {
-        $this->id = 'input-' . Str::kebab(class_basename(get_class($this))) . '-' . md5($name);
-        $this->name = $name;
-        $this->type = $type;
+        $this->type         = $type;
+        $this->dismissible  = $dismissible;
+    }
+
+    /**
+     * Get the HTML Class for the avatar.
+     *
+     * @return string
+     */
+    public function getClassAttributes() {
+      $class = 'alert';
+      if($this->type) { $class .= ' alert-' . $this->type; }
+      if($this->dismissible) { $class .= ' alert-dismissible'; }
+
+      return $class;
     }
 
     /**
