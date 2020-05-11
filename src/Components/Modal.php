@@ -20,7 +20,13 @@ class Modal extends Component
      */
     public $name;
     /**
-     * The modal title.
+     * The link text.
+     *
+     * @var string
+     */
+    public $text;
+    /**
+     * The modal title text.
      *
      * @var string
      */
@@ -31,19 +37,32 @@ class Modal extends Component
      * @var string
      */
     public $size;
+    /**
+     * If modal is open.
+     *
+     * @var bool
+     */
+    public $open;
 
     /**
      * Create a new component instance.
      *
+     * @param  string   $name
+     * @param  string   $text
+     * @param  string   $title
      * @param  string   $size
+     * @param  bool     $open
      *
      * @return void
      */
-    public function __construct($name = "modal", $title = "Title", $size = "md")
+    public function __construct($name = "modal", $text = "Click for Modal", $title = null, $size = "md", $open = false)
     {
-        $this->id = 'input-' . Str::kebab(class_basename(get_class($this))) . '-' . md5($name);
+        $this->id = 'form-' . Str::kebab(class_basename(get_class($this))) . '-' . md5($name);
         $this->name = $name;
+        $this->text = $text;
+        $this->title = $title ?? $text;
         $this->size = $size;
+        $this->open = $open;
     }
 
     /**
