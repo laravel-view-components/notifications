@@ -10,7 +10,10 @@
   "autoload": {
     "psr-4": {
       "LaravelViewComponents\\": "src/"
-    }
+    },
+    "files": [
+      "src/helpers.php"
+    ]
   },
   "suggest": {
     "laravel-view-components/forms": "Additional UI Elements"
